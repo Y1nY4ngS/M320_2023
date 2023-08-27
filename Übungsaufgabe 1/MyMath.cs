@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Übungsaufgabe_1
 {
-    internal class MyMath
+    public class MyMath
     {
-        static int Calc_ggT(int a, int b)
+        public static int Calc_ggT(int a, int b)
         {
             int z;
             while (b != 0)
@@ -20,44 +20,46 @@ namespace Übungsaufgabe_1
             return a;
         }
 
-        static int Calc_kgV(int a, int b)
+        public static int Calc_kgV(int a, int b)
         {
             return (a * b) / Calc_ggT(a, b);
         }
 
-        static int ReadInt()
+        public static int ReadInt()
         {
             int i;
             do
             {
-                Console.WriteLine("Bitte Zahl eingeben");
-                string s = System.Console.ReadLine();
+                Console.WriteLine("Zahl eingeben");
+                string s = Console.ReadLine();
                 int.TryParse(s, out i);
             } while (i <= 0);
-            Console.WriteLine("danke");
+            Console.WriteLine("Danke");
+
             return i;
+
         }
 
-        static void ShowResult(string op, int a, int b, int c)
+        public static void ShowResult(string op, int a, int b, int c)
         {
             Console.WriteLine(op + " von {0} und {1} ist {2}", a, b, c);
         }
 
-        private static string MenuOeffnen()
+        public static string MenuOeffnen()
         {
 
             Console.WriteLine("");
             Console.WriteLine("Bitte Operation eingeben:");
-            Console.WriteLine("  g für ggT");
-            Console.WriteLine("  k für kgV");
-            Console.WriteLine("  r für ggTr");
-            Console.WriteLine("  e für exit");
-            string de = Console.ReadLine();
-            return de;
+            Console.WriteLine("g für ggT");
+            Console.WriteLine("k für kgV");
+            Console.WriteLine("r für ggTr");
+            Console.WriteLine("e für exit");
+            string op = Console.ReadLine();
+            return op;
 
         }
 
-        static int Calc_ggT_r(int a, int b)
+        public static int Calc_ggT_r(int a, int b)
         {
             if (b == 0)
             {
@@ -67,6 +69,13 @@ namespace Übungsaufgabe_1
             {
                 return Calc_ggT_r(b, a % b);
             }
+        }
+
+        public static void SwapInt(int a, int b)
+        {
+            int c = a;
+            a = b;
+            b = c;
         }
     }
 }

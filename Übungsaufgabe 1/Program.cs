@@ -8,40 +8,45 @@ namespace Übungsaufgabe_1
         {
             while (true)
             {
-                string de = MenuOeffnen();
-                if (IstDe(de))
+                string op = MyMath.MenuOeffnen();
+                if (IsValidOp(op))
                 {
-                    int a = IntRead();
-                    int b = IntRead();
+                    int a = MyMath.ReadInt();
+                    int b = MyMath.ReadInt();
                     int r;
-                    switch (de)
+                    switch (op)
                     {
                         case "g":
-                            r = Calc_ggT(a, b);
-                            ShowResult("ggT", a,b, r);
+                            r = MyMath.Calc_ggT(a, b);
+                            MyMath.ShowResult("ggT", a, b, r);
                             break;
                         case "k":
-                            r = Calc_kgV(a, b);
-                            ShowResult("kgV", a, b, r);
+                            r = MyMath.Calc_kgV(a, b);
+                            MyMath.ShowResult("kgV", a, b, r);
                             break;
                         case "r":
-                            r = Calc_ggT_r(a, b);
-                            ShowResult("ggTr", a, b, r);
+                            r = MyMath.Calc_ggT_r(a, b);
+                            MyMath.ShowResult("ggTr", a, b, r);
                             break;
                         default:
                             Console.WriteLine("Operation geht nicht");
                             break;
                     }
-                } else if (de== 'e')
+                } else if (op == "e")
                 {
                     Console.WriteLine("Aufwiedersehen");
                     break;
+                } 
+                else
+                {
+                    Console.WriteLine("ungültige Operation");
                 }
             }
-            private static bool IsValidOp(string op)
-            {
-                return op == "g" || op == "k" || op == "r";
-            }
+        }
+
+        private static bool IsValidOp(string op)
+        {
+            return op == "g" || op == "k" || op == "r";
         }
     }
 }
