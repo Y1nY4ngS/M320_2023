@@ -71,7 +71,42 @@ namespace Übungsaufgabe_1
             }
         }
 
-        public static void SwapInt(int a, int b)
+        public static double CalcMiddle(int[] werte)
+        {
+            double summe = 0.0;
+            foreach (int wert in werte)
+            {
+                summe += wert;
+            }
+            return summe / werte.Length;
+        }
+
+
+
+        public static int GetMin(int[] werte)
+        {
+            int min = int.MaxValue;
+            foreach (int wert in werte)
+            {
+                if (wert < min)
+                    min = wert;
+            }
+            return min;
+        }
+
+
+
+        public static int GetMax(int[] werte)
+        {
+            int max = int.MinValue;
+            foreach (int wert in werte)
+            {
+                if (wert > max)
+                    max = wert;
+            }
+            return max;
+
+            public static void SwapInt(int a, int b)
         {
             int c = a;
             a = b;
