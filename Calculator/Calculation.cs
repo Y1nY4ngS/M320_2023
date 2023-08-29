@@ -9,6 +9,21 @@ namespace Calculator
 {
     internal class Calculation
     {
+        public static string MenuOeffnen()
+        {
+
+            Console.WriteLine("");
+            Console.WriteLine("Bitte Operation eingeben:");
+            Console.WriteLine("a für 2 Zahlen addieren");
+            Console.WriteLine("s für 2 Zalhen subtrahieren ");
+            Console.WriteLine("m für 2 Zalhen multiplizieren");
+            Console.WriteLine("d für 2 Zahlen dividieren");
+            Console.WriteLine("b für alle 4 operationen");
+            Console.WriteLine("e für exit");
+            string op = Console.ReadLine();
+            return op;
+
+        }
         public static double Operant()
         {
             double i;
