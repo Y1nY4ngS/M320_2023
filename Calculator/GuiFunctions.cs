@@ -23,7 +23,7 @@ namespace Calculator
             return op;
 
         }
-        public static void SwitchCase(string op)
+        public static void AutoExec()
         {
             double a;
             double b;
@@ -31,58 +31,65 @@ namespace Calculator
             double su;
             double mu;
             double de;
-            if (IsValidOp(op))
+            while (true)
             {
-                switch (op)
+                string op = MenuOeffnen();
+                if (IsValidOp(op))
                 {
-                    case "b":
-                        a = Calculation.Operant();
-                        b = Calculation.Operant1();
-                        ad = Calculation.Addition(a, b);
-                        su = Calculation.Subtraction(a, b);
-                        mu = Calculation.Multiplication(a, b);
-                        de = Calculation.Devision(a, b);
-                        Console.WriteLine($"{a} + {b} = {ad}");
-                        Console.WriteLine($"{a} - {b} = {su}");
-                        Console.WriteLine($"{a} * {b} = {mu}");
-                        Console.WriteLine($"{a} / {b} = {de}");
-                        break;
-                    case "a":
-                        a = Calculation.Operant();
-                        b = Calculation.Operant1();
-                        ad = Calculation.Addition(a, b);
-                        Console.WriteLine($"{a} + {b} = {ad}");
-                        break;
-                    case "s":
-                        a = Calculation.Operant();
-                        b = Calculation.Operant1();
-                        su = Calculation.Subtraction(a, b);
-                        Console.WriteLine($"{a} - {b} = {su}");
-                        break;
-                    case "m":
-                        a = Calculation.Operant();
-                        b = Calculation.Operant1();
-                        mu = Calculation.Multiplication(a, b);
-                        Console.WriteLine($"{a} * {b} = {mu}");
-                        break;
-                    case "d":
-                        a = Calculation.Operant();
-                        b = Calculation.Operant1();
-                        de = Calculation.Devision(a, b);
-                        Console.WriteLine($"{a} / {b} = {de}");
-                        break;
-                    default:
-                        Console.WriteLine("Operation geht nicht");
-                        break;
+                    switch (op)
+                    {
+                        case "b":
+                            a = Calculation.Operant();
+                            b = Calculation.Operant1();
+                            ad = Calculation.Addition(a, b);
+                            su = Calculation.Subtraction(a, b);
+                            mu = Calculation.Multiplication(a, b);
+                            de = Calculation.Devision(a, b);
+                            Console.WriteLine($"{a} + {b} = {ad}");
+                            Console.WriteLine($"{a} - {b} = {su}");
+                            Console.WriteLine($"{a} * {b} = {mu}");
+                            Console.WriteLine($"{a} / {b} = {de}");
+                            break;
+                        case "a":
+                            a = Calculation.Operant();
+                            b = Calculation.Operant1();
+                            ad = Calculation.Addition(a, b);
+                            Console.WriteLine($"{a} + {b} = {ad}");
+                            break;
+                        case "s":
+                            a = Calculation.Operant();
+                            b = Calculation.Operant1();
+                            su = Calculation.Subtraction(a, b);
+                            Console.WriteLine($"{a} - {b} = {su}");
+                            break;
+                        case "m":
+                            a = Calculation.Operant();
+                            b = Calculation.Operant1();
+                            mu = Calculation.Multiplication(a, b);
+                            Console.WriteLine($"{a} * {b} = {mu}");
+                            break;
+                        case "d":
+                            a = Calculation.Operant();
+                            b = Calculation.Operant1();
+                            de = Calculation.Devision(a, b);
+                            Console.WriteLine($"{a} / {b} = {de}");
+                            break;
+                        default:
+                            Console.WriteLine("Operation geht nicht");
+                            break;
+                    }
                 }
-            } else if (op == "e") {
-                Console.WriteLine("Aufwiedersehen");
-                break;
+                else if (op == "e")
+                {
+                    Console.WriteLine("Aufwiedersehen");
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine(" Operation ungueltig");
+                }
             }
-            else
-            {
-                Console.WriteLine(" Operation ungueltig");
-            }
+            
         }
         private static bool IsValidOp(string op)
         {

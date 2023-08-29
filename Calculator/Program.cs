@@ -7,11 +7,7 @@ namespace Calculator
     {
         static void Main(string[] args)
         {
-            while (true) 
-            {
-                string op = GuiFunctions.MenuOeffnen();
-                GuiFunctions.SwitchCase(op);
-            }
+            GuiFunctions.AutoExec();
         }
     }
 }
