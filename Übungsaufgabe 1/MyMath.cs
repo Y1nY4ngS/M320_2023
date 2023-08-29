@@ -105,7 +105,7 @@ namespace Übungsaufgabe_1
                     max = wert;
             }
             return max;
-
+        }
             public static void SwapInt(int a, int b)
         {
             int c = a;
