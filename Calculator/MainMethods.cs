@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Calculator
 {
@@ -36,24 +38,23 @@ namespace Calculator
             }
             WeiterRechen();
         }
-
-        public static void SwitchCase(string op, do)
+        public static void SwitchCase2(string op)
         {
             if (IsValidOp(op))
             {
                 switch (op)
                 {
                     case "a":
-                        Calculation.Addition();
+                        Calculation.Addition1();
                         break;
                     case "s":
-                        Calculation.Substraction();
+                        Calculation.Substraction1();
                         break;
                     case "m":
-                        Calculation.Multiplication();
+                        Calculation.Multiplication1();
                         break;
                     case "d":
-                        Calculation.Devision();
+                        Calculation.Devision1();
                         break;
                     default:
                         Console.WriteLine("Operation ungueltig");
@@ -66,30 +67,38 @@ namespace Calculator
             }
             WeiterRechen();
         }
-
         public static void WeiterRechen()
         {
             int i = GuiFunctions.ZwischenMenu();
             if (i == 1)
             {
                 string op = GuiFunctions.MenuFortfuerendeKalkulation();
-                SwitchCase(op);
+                SwitchCase2(op);
             }
             else if (i == 2)
             {
                 AutoExec();
             }
-            else
-            {
-                Console.WriteLine("ungueltige eingabe");
-                Console.WriteLine("");
-                GuiFunctions.ZwischenMenu();
-            }
         }
-
+        private double _zwischenSpeicher;
+        public double ZwischenSpeicherZahl
+        {
+            get { return _zwischenSpeicher; }
+            set { _zwischenSpeicher = value; }
+        }
+        public static double ZwischenSpeicherHolen()
+        {
+            
+        }
+        public static void ZwischenSpeicherFunktion(double i)
+        {
+            MainMethods myResult = new MainMethods();
+            myResult.ZwischenSpeicherZahl = i;
+        }
         public static void ZwischenSpeicher(double r)
         {
             double i = r;
+            ZwischenSpeicherFunktion(i);
         }
         public static void AutoExec()
         {

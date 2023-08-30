@@ -67,5 +67,41 @@ namespace Calculator
             MainMethods.ZwischenSpeicher(r);
             TextCalc.Result(a, b, r, s);
         }
+        public static void Addition1()
+        {
+            double a = MainMethods.ZwischenSpeicherHolen();
+            double b = Operant1();
+            double r = a + b;
+            string s = "+";
+            MainMethods.ZwischenSpeicher(r);
+            TextCalc.Result(a, b, r, s);
+        }
+        public static void Substraction1()
+        {
+            double a = MainMethods.ZwischenSpeicherHolen();
+            double b = Operant1();
+            double r = a - b;
+            string s = "-";
+            MainMethods.ZwischenSpeicher(r);
+            TextCalc.Result(a, b, r, s);
+        }
+        public static void Multiplication1()
+        {
+            double a = MainMethods.ZwischenSpeicherHolen();
+            double b = Operant1();
+            double r = a * b;
+            string s = "*";
+            MainMethods.ZwischenSpeicher(r);
+            TextCalc.Result(a, b, r, s);
+        }
+        public static void Devision1()
+        {
+            double a = MainMethods.ZwischenSpeicherHolen();
+            double b = Operant1();
+            double r = a / b;
+            string s = "/";
+            MainMethods.ZwischenSpeicher(r);
+            TextCalc.Result(a, b, r, s);
+        }
     }
 }

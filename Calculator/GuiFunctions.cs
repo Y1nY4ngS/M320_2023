@@ -22,7 +22,6 @@ namespace Calculator
             return op;
 
         }
-
         public static int ZwischenMenu()
         {
             int i;
@@ -34,6 +33,7 @@ namespace Calculator
                 Console.WriteLine("2 für nein");
                 string s = Console.ReadLine();
                 int.TryParse(s, out i);
+                if (i != 1 && i != 2) Console.WriteLine("ungueltige eingabe");
             } while (i !=1 && i != 2);
             return i;
         }
