@@ -7,7 +7,7 @@ namespace Calculator
     {
         static void Main(string[] args)
         {
-            GuiFunctions.AutoExec();
+            MainMethods.AutoExec();
         }
     }
 }

@@ -17,83 +17,35 @@ namespace Calculator
             Console.WriteLine("s für 2 Zalhen subtrahieren ");
             Console.WriteLine("m für 2 Zalhen multiplizieren");
             Console.WriteLine("d für 2 Zahlen dividieren");
-            Console.WriteLine("b für alle 4 operationen");
             Console.WriteLine("e für exit");
             string op = Console.ReadLine();
             return op;
 
         }
-        public static void AutoExec()
+
+        public static int ZwischenMenu()
         {
-            double a;
-            double b;
-            double ad;
-            double su;
-            double mu;
-            double de;
-            while (true)
+            int i;
+            do
             {
-                string op = MenuOeffnen();
-                if (IsValidOp(op))
-                {
-                    switch (op)
-                    {
-                        case "b":
-                            a = Calculation.Operant();
-                            b = Calculation.Operant1();
-                            ad = Calculation.Addition(a, b);
-                            su = Calculation.Subtraction(a, b);
-                            mu = Calculation.Multiplication(a, b);
-                            de = Calculation.Devision(a, b);
-                            Console.WriteLine($"{a} + {b} = {ad}");
-                            Console.WriteLine($"{a} - {b} = {su}");
-                            Console.WriteLine($"{a} * {b} = {mu}");
-                            Console.WriteLine($"{a} / {b} = {de}");
-                            break;
-                        case "a":
-                            a = Calculation.Operant();
-                            b = Calculation.Operant1();
-                            ad = Calculation.Addition(a, b);
-                            Console.WriteLine($"{a} + {b} = {ad}");
-                            break;
-                        case "s":
-                            a = Calculation.Operant();
-                            b = Calculation.Operant1();
-                            su = Calculation.Subtraction(a, b);
-                            Console.WriteLine($"{a} - {b} = {su}");
-                            break;
-                        case "m":
-                            a = Calculation.Operant();
-                            b = Calculation.Operant1();
-                            mu = Calculation.Multiplication(a, b);
-                            Console.WriteLine($"{a} * {b} = {mu}");
-                            break;
-                        case "d":
-                            a = Calculation.Operant();
-                            b = Calculation.Operant1();
-                            de = Calculation.Devision(a, b);
-                            Console.WriteLine($"{a} / {b} = {de}");
-                            break;
-                        default:
-                            Console.WriteLine("Operation geht nicht");
-                            break;
-                    }
-                }
-                else if (op == "e")
-                {
-                    Console.WriteLine("Aufwiedersehen");
-                    break;
-                }
-                else
-                {
-                    Console.WriteLine(" Operation ungueltig");
-                }
-            }
-            
+                Console.WriteLine("");
+                Console.WriteLine("Wollen Sie mit dem Zwischenergebnis weiter rechen?");
+                Console.WriteLine("1 für ja");
+                Console.WriteLine("2 für nein");
+                string s = Console.ReadLine();
+                int.TryParse(s, out i);
+            } while (i !=1 && i != 2);
+            return i;
         }
-        private static bool IsValidOp(string op)
+        public static string MenuFortfuerendeKalkulation() 
         {
-            return op == "b" || op == "a" || op == "s" || op == "m" || op == "d";
+            Console.WriteLine("");
+            Console.WriteLine("a weiter addieren");
+            Console.WriteLine("s weiter subtrahieren");
+            Console.WriteLine("m weiter multiplizieren");
+            Console.WriteLine("d weiter devidieren");
+            string op = Console.ReadLine();
+            return op;
         }
     }
 }

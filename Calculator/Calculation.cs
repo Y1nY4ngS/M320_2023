@@ -22,38 +22,50 @@ namespace Calculator
         }
         public static double Operant1()
         {
-            double o;
+            double i;
             do
             {
                 Console.WriteLine("Operand 2:\t");
                 string s = Console.ReadLine();
-                double.TryParse(s, out o);
-            } while (o <= 0);
-            return o;
-        }
-        public static double Addition(double a, double b)
-        {
-            double i;
-            i = a + b;
+                double.TryParse(s, out i);
+            } while (i <= 0);
             return i;
         }
-        public static double Subtraction(double a, double b)
+        public static void Addition()
         {
-            double i;
-            i = a - b;
-            return i;
+            double a = Operant();
+            double b = Operant1();
+            double r = a + b;
+            string s = "+";
+            MainMethods.ZwischenSpeicher(r);
+            TextCalc.Result(a, b, r, s);
         }
-        public static double Multiplication(double a, double b)
+        public static void Substraction()
         {
-            double i;
-            i = a * b;
-            return i;
+            double a = Operant();
+            double b = Operant1();
+            double r = a - b;
+            string s = "-";
+            MainMethods.ZwischenSpeicher(r);
+            TextCalc.Result(a, b, r, s);
         }
-        public static double Devision(double a, double b)
+        public static void Multiplication()
         {
-            double i;
-            i = a / b;
-            return i;
+            double a = Operant();
+            double b = Operant1();
+            double r = a * b;
+            string s = "*";
+            MainMethods.ZwischenSpeicher(r);
+            TextCalc.Result(a, b, r, s);
+        }
+        public static void Devision()
+        {
+            double a = Operant();
+            double b = Operant1();
+            double r = a / b;
+            string s = "/";
+            MainMethods.ZwischenSpeicher(r);
+            TextCalc.Result(a, b, r, s);
         }
     }
 }
