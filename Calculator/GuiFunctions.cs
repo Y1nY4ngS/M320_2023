@@ -10,7 +10,6 @@ namespace Calculator
     {
         public static string MenuOeffnen()
         {
-
             Console.WriteLine("");
             Console.WriteLine("Bitte Operation eingeben:");
             Console.WriteLine("a für 2 Zahlen addieren");
@@ -20,7 +19,6 @@ namespace Calculator
             Console.WriteLine("e für exit");
             string op = Console.ReadLine();
             return op;
-
         }
         public static int ZwischenMenu()
         {

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Runtime.InteropServices.JavaScript.JSType;
@@ -86,10 +87,12 @@ namespace Calculator
             get { return _zwischenSpeicher; }
             set { _zwischenSpeicher = value; }
         }
-        public static double ZwischenSpeicherHolen()
+        public static double  ZwischenSpeicherHolen()
         {
-            
+            double i = 10;
+            return i;
         }
+        
         public static void ZwischenSpeicherFunktion(double i)
         {
             MainMethods myResult = new MainMethods();
