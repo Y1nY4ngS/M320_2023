@@ -81,15 +81,15 @@ namespace Calculator
                 AutoExec();
             }
         }
-        private double _zwischenSpeicher;
-        public double ZwischenSpeicherZahl
+        private static double _zwischenSpeicher;
+        public static double ZwischenSpeicherZahl
         {
             get { return _zwischenSpeicher; }
             set { _zwischenSpeicher = value; }
         }
         public static double  ZwischenSpeicherHolen()
         {
-            double i = 10;
+            double i = _zwischenSpeicher;
             return i;
         }
         
